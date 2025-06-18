@@ -81,7 +81,6 @@ const customCSS = `
   /* Hide all branding, avatars, icons, and unnecessary UI */
   .draggable.h-header-height,
   [data-testid="profile-button"],
-  [data-testid="model-switcher-dropdown-button"],
   [data-testid="mobile-login-button"],
   [data-testid="login-button"],
   [data-testid="signup-button"],
@@ -91,43 +90,48 @@ const customCSS = `
   .bg-token-bg-primary.sticky,
   .bg-token-bg-primary.absolute,
   .bg-token-bg-primary.fixed,
-  [aria-label*='ChatGPT'], [data-testid="user-avatar"], [data-testid="bot-avatar"], .icon, .icon-lg, .icon-sm {
+  [aria-label*='ChatGPT'], [data-testid="user-avatar"], [data-testid="bot-avatar"] {
     display: none !important;
   }
-`;
 
-const vimJS = `
-(function() {
-  // Key mapping: key => selector
-  const keyMap = {
-    'a': '[aria-label="Attach"]', // Attach button
-    's': 'form button[type="submit"]', // Send button
-    'i': 'textarea, [data-testid="composer"]', // Input field
-  };
+  /* Make model switcher button and its icon visible and styled */
+  [data-testid="model-switcher-dropdown-button"] {
+    display: flex !important;
+    background: #181a1b !important;
+    color: #00ff5f !important;
+    border: 1px solid #00ff5f !important;
+    font-family: 'Fira Mono', 'Menlo', 'Consolas', 'monospace' !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: 2.5em !important;
+    min-width: 6em !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  [data-testid="model-switcher-dropdown-button"] .icon,
+  [data-testid="model-switcher-dropdown-button"] .icon-sm {
+    display: inline !important;
+    color: #00ff5f !important;
+    width: 1em !important;
+    height: 1em !important;
+  }
 
-  document.addEventListener('keydown', function(e) {
-    // If typing in an input/textarea, only handle Esc
-    if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName) || document.activeElement.getAttribute('data-testid') === 'composer') {
-      if (e.key === 'Escape') {
-        document.activeElement.blur();
-        e.preventDefault();
-      }
-      return;
-    }
-    // Vim-like navigation
-    if (e.key in keyMap) {
-      const el = document.querySelector(keyMap[e.key]);
-      if (el) {
-        if (e.key === 's') {
-          el.click(); // Send
-        } else {
-          el.focus();
-        }
-        e.preventDefault();
-      }
-    }
-  }, true);
-})();
+  /* Status bar styling */
+  #vim-status-bar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: #181a1b;
+    color: #00ff5f;
+    font-family: 'Fira Mono', 'Menlo', 'Consolas', 'monospace';
+    font-size: 1rem;
+    border-top: 1px solid #00ff5f;
+    padding: 0.2em 1em;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    text-align: left;
+    letter-spacing: 0.1em;
+  }
 `;
 
 const createWindow = () => {
@@ -148,7 +152,6 @@ const createWindow = () => {
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.webContents.insertCSS(customCSS).catch(() => {});
-    mainWindow.webContents.executeJavaScript(vimJS).catch(() => {});
   });
 
   // Open the DevTools in development.
