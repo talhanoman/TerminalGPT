@@ -1,15 +1,27 @@
 {
   "name": "chatgpt-wrapper",
-  "productName": "chatgpt-wrapper",
+  "productName": "TerminalGPT",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A sleek, minimalistic desktop wrapper for ChatGPT built with Electron — styled like your favorite hacker terminal",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
+    "dev": "electron-forge start",
+    "build": "electron-forge make",
     "package": "electron-forge package",
     "make": "electron-forge make",
+    "make:win": "electron-forge make --platform win32",
+    "make:mac": "electron-forge make --platform darwin",
+    "make:linux": "electron-forge make --platform linux",
+    "dist": "electron-forge make",
+    "dist:win": "electron-forge make --platform win32",
+    "dist:mac": "electron-forge make --platform darwin",
+    "dist:linux": "electron-forge make --platform linux",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "clean": "rm -rf out/ .webpack/ node_modules/",
+    "install-deps": "npm install",
+    "rebuild": "npm run clean && npm run install-deps"
   },
   "keywords": [],
   "author": {
