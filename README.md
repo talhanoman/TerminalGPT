@@ -26,6 +26,8 @@ Behind the scenes, it's still the powerful ChatGPT — just cooler.
 ## 📸 Screenshots
 ![TerminalGPT Screenshot](https://i.ibb.co/4RM2ZxTr/SCR-20250621-duga.png)
 
+![TerminalGPT Screenshot 2](https://i.ibb.co/9kRFvFTL/terminal-2.png)
+
 > Feel like you're chatting with AI from a hacker's command line.
 
 ---
