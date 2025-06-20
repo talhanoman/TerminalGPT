@@ -24,7 +24,7 @@ Behind the scenes, it's still the powerful ChatGPT — just cooler.
 ---
 
 ## 📸 Screenshots
-![TerminalGPT Screenshot](https://utfs.io/f/5ILXwyu0qRUwk25ZUsGpDrJGu6IBOen0mLoYtZFAXPM8bdjW)
+![TerminalGPT Screenshot](https://ibb.co/pjZQvpzF)
 
 > Feel like you're chatting with AI from a hacker's command line.
 
@@ -63,15 +63,15 @@ Before building TerminalGPT, make sure you have the following installed:
 
 #### macOS/Linux
 ```bash
-git clone https://github.com/yourusername/chatgpt-wrapper.git
-cd chatgpt-wrapper
+git clone https://github.com/talhanoman/TerminalGPT.git
+cd TerminalGPT
 ./build.sh
 ```
 
 #### Windows
 ```cmd
-git clone https://github.com/yourusername/chatgpt-wrapper.git
-cd chatgpt-wrapper
+git clone https://github.com/talhanoman/TerminalGPT.git
+cd TerminalGPT
 build.bat
 ```
 
@@ -79,8 +79,8 @@ build.bat
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/chatgpt-wrapper.git
-cd chatgpt-wrapper
+git clone https://github.com/talhanoman/TerminalGPT.git
+cd TerminalGPT
 ```
 
 #### 2. Install Dependencies
@@ -212,7 +212,7 @@ npm install
 ## 🏗️ Project Structure
 
 ```
-chatgpt-wrapper/
+TerminalGPT/
 ├── src/                    # Source code
 │   ├── main.js            # Main process
 │   ├── renderer.js        # Renderer process
@@ -257,7 +257,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you encounter any issues or have questions:
 
 1. Check the [Troubleshooting](#troubleshooting) section above
-2. Search existing [Issues](https://github.com/yourusername/chatgpt-wrapper/issues)
+2. Search existing [Issues](https://github.com/talhanoman/TerminalGPT/issues)
 3. Create a new issue with detailed information about your problem
 
 ---
