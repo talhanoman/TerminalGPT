@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading ChatGPT Terminal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #181a1b;
+            color: #00ff5f;
+            font-family: 'Fira Mono', 'Menlo', 'Consolas', 'monospace';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            text-align: center;
+            border: 1px solid #00ff5f;
+            padding: 2rem;
+            background: #181a1b;
+        }
+
+        .loading-text {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ff5f;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .status-text {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #00ff5f;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-text">
+            INITIALIZING CHATGPT TERMINAL<span class="cursor"></span>
+        </div>
+        <div class="loading-spinner"></div>
+        <div class="status-text">
+            Loading interface and applying terminal styles...
+        </div>
+    </div>
+</body>
+</html> 
